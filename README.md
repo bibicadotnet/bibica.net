@@ -19,3 +19,16 @@ www.bibica.net
 api.bibica.net
 ```
 Chạy file installer.php để restore
+
+# Combo remote + webserver trên Oracle (2 VPS FREE)
+Trang bibica.net sẽ là trang chính, cài đặt Nginx và PHP (sử dụng cài đặt Webserver)
+Trang api.bibica.net là trang proxy ảnh, cài đặt Nginx và Mysql (sử dụng cài đặt Remote server và proxy)
+1. Remote server và proxy
+Cập nhập OS và khởi động lại hệ thống
+```shell
+sudo apt update && sudo apt upgrade -y && sudo reboot
+```
+Cài đặt Nginx cho proxy api.bibica.net cài đặt và Mysql làm remote database cho bibica.net
+```shell
+https://raw.githubusercontent.com/bibicadotnet/bibica.net/main/setup_remote_proxy.sh -O setup_remote_proxy.sh && sudo chmod +x setup_remote_proxy.sh && sudo ./setup_remote_proxy.sh
+```
