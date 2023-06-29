@@ -2,11 +2,15 @@
 <ul>
  	<li>Cập nhập OS và khởi động lại hệ thống</li>
 </ul>
-<pre class="EnlighterJSRAW" data-enlighter-language="generic">sudo apt update &amp;&amp; sudo apt upgrade -y &amp;&amp; sudo reboot</pre>
+```shell
+sudo apt update &amp;&amp; sudo apt upgrade -y &amp;&amp; sudo reboot
+```
 <ul>
  	<li>Cài đặt Webinoly và cấu hình cho domain bibica.net</li>
 </ul>
-<pre class="EnlighterJSRAW" data-enlighter-language="generic">sudo wget --no-check-certificate https://raw.githubusercontent.com/bibicadotnet/bibica.net/main/setup.sh -O setup_bibica_net.sh &amp;&amp; sudo chmod +x setup_bibica_net.sh &amp;&amp; sudo ./setup_bibica_net.sh</pre>
+```shell
+sudo wget --no-check-certificate https://raw.githubusercontent.com/bibicadotnet/bibica.net/main/setup.sh -O setup_bibica_net.sh &amp;&amp; sudo chmod +x setup_bibica_net.sh &amp;&amp; sudo ./setup_bibica_net.sh
+```
 <ul>
  	<li>Restore Bằng Duplicator Pro</li>
 </ul>
