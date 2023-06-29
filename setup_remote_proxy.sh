@@ -31,4 +31,4 @@ sudo service nginx reload
 sudo wget --no-check-certificate https://raw.githubusercontent.com/bibicadotnet/bibica.net/main/my.cnf -O /etc/mysql/my.cnf
 sudo service mysql restart
 sudo webinoly -mysql-public-access=on -create-master-user=[masteruser,abcdefgh]
-sudo site -mysql
+sudo site -mysql -external-db=[masteruser,abcdefgh]
