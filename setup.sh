@@ -10,6 +10,8 @@ echo "0 3 * * * /usr/local/bin/wp --path='/var/www/bibica.net/htdocs' simply-sta
 crontab simply-static
 sudo site bibica.net -wp
 sudo httpauth bibica.net -wp-admin=off
+mkdir -p /var/www/bibica.net/static-files-temp
+chmod 777 /var/www/bibica.net/static-files-temp
 mkdir -p /root/ssl
 sudo wget --no-check-certificate https://raw.githubusercontent.com/bibicadotnet/bibica.net/main/bibica.net.pem -O /root/ssl/bibica.net.pem
 sudo wget --no-check-certificate https://raw.githubusercontent.com/bibicadotnet/bibica.net/main/bibica.net.key -O /root/ssl/bibica.net.key
