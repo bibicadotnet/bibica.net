@@ -10,6 +10,8 @@ sudo wget --no-check-certificate https://raw.githubusercontent.com/bibicadotnet/
 sudo site api.bibica.net -proxy=[https://i0.wp.com/cdn.bibica.net/wp-content/uploads/] -dedicated-reverse-proxy=simple
 sudo wget --no-check-certificate https://raw.githubusercontent.com/bibicadotnet/bibica.net/main/api.bibica.net -O //etc/nginx/sites-available/api.bibica.net
 nginx -t
-service nginx reload
+sudo service nginx reload
+sudo wget --no-check-certificate https://raw.githubusercontent.com/bibicadotnet/bibica.net/main/my.cnf -O /etc/mysql/my.cnf
+sudo service mysql restart
 cd /var/www/bibica.net/htdocs
 rm -rf *
