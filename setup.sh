@@ -1,5 +1,13 @@
 #!/bin/bash
 sudo wget --no-check-certificate https://raw.githubusercontent.com/bibicadotnet/Webinoly-Optimization/master/webinoly74.sh -O webinoly_mod.sh && sudo chmod +x webinoly_mod.sh && sudo ./webinoly_mod.sh
+curl -O https://raw.githubusercontent.com/wp-cli/builds/gh-pages/phar/wp-cli.phar
+php wp-cli.phar --info
+chmod +x wp-cli.phar
+sudo mv wp-cli.phar /usr/local/bin/wp
+sudo -v ; curl https://rclone.org/install.sh | sudo bash
+crontab -l > simply-static
+echo "0 3 * * * /usr/local/bin/wp --path='/var/www/bibica.net/htdocs' simply-static run --allow-root" >> simply-static
+crontab simply-static
 sudo site bibica.net -wp
 sudo httpauth bibica.net -wp-admin=off
 mkdir -p /root/ssl
@@ -13,13 +21,5 @@ nginx -t
 sudo service nginx reload
 sudo wget --no-check-certificate https://raw.githubusercontent.com/bibicadotnet/bibica.net/main/my.cnf -O /etc/mysql/my.cnf
 sudo service mysql restart
-curl -O https://raw.githubusercontent.com/wp-cli/builds/gh-pages/phar/wp-cli.phar
-php wp-cli.phar --info
-chmod +x wp-cli.phar
-sudo mv wp-cli.phar /usr/local/bin/wp
-sudo -v ; curl https://rclone.org/install.sh | sudo bash
-crontab -l > simply-static
-echo "0 3 * * * /usr/local/bin/wp --path='/var/www/bibica.net/htdocs' simply-static run --allow-root" >> simply-static
-crontab simply-static
 cd /var/www/bibica.net/htdocs
 rm -rf *
