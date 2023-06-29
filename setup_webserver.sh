@@ -14,8 +14,8 @@ sudo apt install screen -y
 sudo wget --no-check-certificate https://raw.githubusercontent.com/bibicadotnet/webinoly/master/weby -O weby && sudo chmod +x weby && sudo ./weby -clean
 sudo rm /opt/webinoly/webinoly.conf
 sudo wget --no-check-certificate https://raw.githubusercontent.com/bibicadotnet/Webinoly-Optimization/master/webinoly_php74.conf -O /opt/webinoly/webinoly.conf
-sudo stack -nginx
-sudo stack -php
+sudo stack -nginx -build=light
+sudo stack -php -build=light
 sudo apt update && sudo apt upgrade -y
 sudo wget --no-check-certificate https://raw.githubusercontent.com/bibicadotnet/Webinoly-Optimization/master/php.ini -O /etc/php/7.4/fpm/php.ini
 sudo service php7.4-fpm restart
