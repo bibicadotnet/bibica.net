@@ -21,7 +21,7 @@ api.bibica.net
 Chạy file installer.php để restore
 
 # Combo remote + webserver trên Oracle (2 VPS FREE)
-Trang bibica.net sẽ là trang chính, cài đặt Nginx và PHP (sử dụng cài đặt Webserver)
+Trang bibica.net sẽ là trang chính, cài đặt Nginx và PHP (sử dụng cài đặt Webserver) <br>
 Trang api.bibica.net là trang proxy ảnh, cài đặt Nginx và Mysql (sử dụng cài đặt Remote server và proxy)
 
 # Remote server và proxy
