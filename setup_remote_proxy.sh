@@ -1,4 +1,7 @@
 #!/bin/bash
+sudo apt remove iptables-persistent -y
+sudo ufw disable
+sudo iptables -F
 locale-gen en_US.UTF-8
 export LANG=en_US.UTF-8
 export LC_ALL=en_US.UTF-8
