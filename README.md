@@ -7,12 +7,12 @@ Cài đặt Webinoly và cấu hình cho domain bibica.net
 ```shell
 sudo wget --no-check-certificate https://raw.githubusercontent.com/bibicadotnet/bibica.net/main/setup.sh -O setup_bibica_net.sh && sudo chmod +x setup_bibica_net.sh && sudo ./setup_bibica_net.sh
 ```
-Restore Bằng Duplicator Pro
+## Restore Bằng Duplicator Pro
 Upload archive.zip và installer.php vào (có thể sử dụng wget cho nhanh)
 ```shell
 /var/www/bibica.net/htdocs
 ```
-Đổi 3 Records bên dưới về IP mới
+## Đổi 3 domain bên dưới về IP mới
 ```shell
 bibica.net
 www.bibica.net
@@ -43,3 +43,15 @@ Cài đặt Nginx và PHP bibica.net
 ```shell
 sudo wget --no-check-certificate https://raw.githubusercontent.com/bibicadotnet/bibica.net/main/setup_webserver.sh && sudo chmod +x setup_webserver.sh && sudo ./setup_webserver.sh
 ```
+### Restore Bằng Duplicator Pro
+Upload archive.zip và installer.php vào (có thể sử dụng wget cho nhanh)
+```shell
+/var/www/bibica.net/htdocs
+```
+### Đổi 3 domain bên dưới về IP mới
+```shell
+bibica.net -> IP Webserver
+www.bibica.net -> IP Webserver
+api.bibica.net -> IP Remote server và proxy
+```
+Chạy file installer.php để restore
