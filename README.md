@@ -23,7 +23,8 @@ Chạy file installer.php để restore
 # Combo remote + webserver trên Oracle (2 VPS FREE)
 Trang bibica.net sẽ là trang chính, cài đặt Nginx và PHP (sử dụng cài đặt Webserver)
 Trang api.bibica.net là trang proxy ảnh, cài đặt Nginx và Mysql (sử dụng cài đặt Remote server và proxy)
-1. Remote server và proxy
+
+Remote server và proxy<br>
 Cập nhập OS và khởi động lại hệ thống
 ```shell
 sudo apt update && sudo apt upgrade -y && sudo reboot
