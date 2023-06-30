@@ -1,4 +1,4 @@
-# Setup cho bibica.net
+# 1 VPS cho bibica.net, api.bibica.net
 Cập nhập OS và khởi động lại hệ thống
 ```shell
 sudo apt update && sudo apt upgrade -y && sudo reboot
