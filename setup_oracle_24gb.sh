@@ -51,10 +51,10 @@ sudo wget --no-check-certificate https://raw.githubusercontent.com/bibicadotnet/
 nginx -t
 sudo service nginx reload
 
-sudo wget --no-check-certificate https://raw.githubusercontent.com/bibicadotnet/bibica.net/main/php_vm_standard_a1_flex.ini -O /etc/php/7.4/fpm/php.ini
-sudo service php7.4-fpm restart
-sudo wget --no-check-certificate https://raw.githubusercontent.com/bibicadotnet/bibica.net/main/my_vm_standard_a1_flex.cnf -O /etc/mysql/my.cnf
-sudo service mysql restart
+#sudo wget --no-check-certificate https://raw.githubusercontent.com/bibicadotnet/bibica.net/main/php_vm_standard_a1_flex.ini -O /etc/php/7.4/fpm/php.ini
+#sudo service php7.4-fpm restart
+#sudo wget --no-check-certificate https://raw.githubusercontent.com/bibicadotnet/bibica.net/main/my_vm_standard_a1_flex.cnf -O /etc/mysql/my.cnf
+#sudo service mysql restart
 
 sudo apt update && sudo apt upgrade -y
 sudo webinoly -verify
