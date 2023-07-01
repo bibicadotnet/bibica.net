@@ -36,9 +36,5 @@ sudo wget --no-check-certificate https://raw.githubusercontent.com/bibicadotnet/
 # nginx reload
 nginx -t
 sudo service nginx reload
-# mariadb config
-#sudo wget --no-check-certificate https://raw.githubusercontent.com/bibicadotnet/bibica.net/main/my.cnf -O /etc/mysql/my.cnf
-#sudo service mysql restart
-# delete all file in foder htdocs
 cd /var/www/bibica.net/htdocs
 rm -rf *
