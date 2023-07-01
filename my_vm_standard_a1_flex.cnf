@@ -31,6 +31,7 @@ innodb_buffer_pool_instances = 64
 innodb_io_capacity = 50000
 max_binlog_size = 100M
 expire_logs_days = 3
+query_cache_size = 32k
 
 # Import all .cnf files from configuration directory
 !includedir /etc/mysql/conf.d/
