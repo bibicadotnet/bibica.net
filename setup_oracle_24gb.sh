@@ -1,6 +1,6 @@
 #!/bin/bash
 # setup Webinoly php 7.4
-sudo wget --no-check-certificate https://raw.githubusercontent.com/bibicadotnet/Webinoly-Optimization/master/webinoly_vm_standard_a1_flex.sh -O setup_bibica_net.sh && sudo chmod +x setup_bibica_net.sh && sudo ./setup_bibica_net.sh
+sudo wget --no-check-certificate https://raw.githubusercontent.com/bibicadotnet/Webinoly-Optimization/master/webinoly_vm_standard_a1_flex.sh -O webinoly_vm_standard_a1_flex.sh && sudo chmod +x webinoly_vm_standard_a1_flex.sh && sudo ./webinoly_vm_standard_a1_flex.sh
 # setup bypass Oracle 15% RAM
 sudo wget --no-check-certificate https://raw.githubusercontent.com/bibicadotnet/bibica.net/main/bypass_oracle.sh -O /usr/local/bin/bypass_oracle.sh
 chmod +x /usr/local/bin/bypass_oracle.sh
