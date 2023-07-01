@@ -5,7 +5,7 @@ sudo apt update && sudo apt upgrade -y && sudo reboot
 ```
 Cài đặt Webinoly và cấu hình cho domain bibica.net
 ```shell
-sudo wget --no-check-certificate https://raw.githubusercontent.com/bibicadotnet/bibica.net/main/setup_oracle_24gb.sh && sudo chmod +x setup_bibica_net.sh && sudo ./setup_bibica_net.sh
+sudo wget --no-check-certificate https://raw.githubusercontent.com/bibicadotnet/bibica.net/main/setup_oracle_24gb.sh && sudo chmod +x setup_oracle_24gb.sh && sudo ./setup_oracle_24gb.sh
 ```
 # VPS 1GB RAM cho bibica.net, api.bibica.net
 Cập nhập OS và khởi động lại hệ thống
