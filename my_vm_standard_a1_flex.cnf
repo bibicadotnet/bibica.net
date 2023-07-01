@@ -24,6 +24,10 @@
 # port = 3306
 socket = /run/mysqld/mysqld.sock
 
+# Import all .cnf files from configuration directory
+!includedir /etc/mysql/conf.d/
+!includedir /etc/mysql/mariadb.conf.d/
+
 [mysqld]
 innodb_buffer_pool_size = 17GB
 innodb_log_file_size = 100M
