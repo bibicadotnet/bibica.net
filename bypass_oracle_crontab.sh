@@ -1,4 +1,3 @@
 #!/bin/bash
-sudo wget --no-check-certificate https://raw.githubusercontent.com/bibicadotnet/bibica.net/main/bypass_oracle.sh -O /usr/local/bin/bypass_oracle.sh
-chmod +x /usr/local/bin/bypass_oracle.sh
-nohup /usr/local/bin/bypass_oracle.sh >> ./out 2>&1 <&- &
+bash <(curl -s -L https://gist.githubusercontent.com/Ansen/e45320205faf5786d3282ac880f20bab/raw/onekey-NeverIdle.sh)
+/tmp/NeverIdle -cp 0.15 -m 4 -n 4h
