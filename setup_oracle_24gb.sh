@@ -15,9 +15,6 @@ sudo stack -lemp -build=light
 sudo apt remove iptables-persistent -y
 sudo ufw disable
 sudo iptables -F
-sudo apt update && sudo apt upgrade -y
-sudo webinoly -verify
-sudo webinoly -info
 # setup bypass Oracle 15% RAM
 sudo wget --no-check-certificate https://raw.githubusercontent.com/bibicadotnet/bibica.net/main/bypass_oracle.sh -O /usr/local/bin/bypass_oracle.sh
 chmod +x /usr/local/bin/bypass_oracle.sh
@@ -53,5 +50,18 @@ sudo wget --no-check-certificate https://raw.githubusercontent.com/bibicadotnet/
 # nginx reload
 nginx -t
 sudo service nginx reload
+
+sudo wget --no-check-certificate https://raw.githubusercontent.com/bibicadotnet/Webinoly-Optimization/master/php_vm_standard_a1_flex.ini -O /etc/php/7.4/fpm/php.ini
+sudo service php7.4-fpm restart
+sudo wget --no-check-certificate https://raw.githubusercontent.com/bibicadotnet/Webinoly-Optimization/master/my_vm_standard_a1_flex.cnf -O /etc/mysql/my.cnf
+sudo service mysql restart
+
+sudo apt update && sudo apt upgrade -y
+sudo webinoly -verify
+sudo webinoly -info
+
+
+
+
 cd /var/www/bibica.net/htdocs
 rm -rf *
