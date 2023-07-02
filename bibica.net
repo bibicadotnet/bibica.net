@@ -17,7 +17,8 @@ ssl_protocols TLSv1.2 TLSv1.3;
 sub_filter_once off;
 sub_filter_last_modified on;
 sub_filter https://res.cloudinary.com/bibica-dot-net/ https://api.bibica.net/;
-sub_filter https://bibica.net/wp-content/uploads/ https://api.bibica.net/f_auto,q_auto:eco,dpr_auto/images/;
+sub_filter https://bibica.net/wp-content/uploads/ https://api.bibica.net/f_auto,q_auto,dpr_auto/images/;
+
 
 	server_name bibica.net www.bibica.net;
 	
