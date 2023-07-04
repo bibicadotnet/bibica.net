@@ -38,7 +38,7 @@ crontab simply-static
 sudo site bibica.net -wp
 sudo httpauth bibica.net -wp-admin=off
 # setup proxy api.bibica.net
-sudo site api.bibica.net -proxy=[https://res.cloudinary.com/bibica-dot-net/] -dedicated-reverse-proxy=simple
+sudo site api.bibica.net -proxy=[https://res.cloudinary.com/xinclub/images/] -dedicated-reverse-proxy=simple
 # setup ssl
 mkdir -p /root/ssl
 sudo wget --no-check-certificate https://raw.githubusercontent.com/bibicadotnet/bibica.net/main/bibica.net.pem -O /root/ssl/bibica.net.pem
