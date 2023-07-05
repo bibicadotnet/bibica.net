@@ -34,12 +34,21 @@ max_heap_table_size = 64M
 tmp_table_size = 64M
 innodb_log_file_size = 160M
 innodb_io_capacity = 50000
-max_binlog_size = 100M
-expire_logs_days = 3
-query_cache_type = 0
+
 query_cache_size = 0
 join_buffer_size = 2M
 
+# BINARY LOGGING
+log_bin = /var/log/mysql/mysql-bin
+max_binlog_size = 160M
+expire_logs_days = 14
+sync_binlog = 1
+# LOGGING
+log_error = /var/log/mysql/mysql-error.log
+log_queries_not_using_indexes = 1
+slow_query_log = 1
+slow_query_log_file = /var/log/mysql/mysql-slow.log
+long_query_time = 4
 
 # Import all .cnf files from configuration directory
 !includedir /etc/mysql/conf.d/
