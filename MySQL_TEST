@@ -26,15 +26,15 @@
     # 80% of ram that is dedicated for the database (this needs to be adjusted to your system)
     innodb_buffer_pool_size        = 14G
     # number of CPU cores dedicated to the MySQL InnoDB backend 
-    innodb_buffer_pool_instances = 16 
+    #gia tri nay ko con dung innodb_buffer_pool_instances = 16 
     
     innodb_data_file_path          = ibdata1:128M:autoextend
     innodb_file_per_table          = 1
     innodb_log_file_size           = 512M
-    innodb_log_files_in_group      = 2
+    #gia tri nay ko con dung innodb_log_files_in_group      = 2
     
     # MyISAM
-    myisam_recover                 = backup,force
+    #gia tri nay ko con dung myisam_recover                 = backup,force
     
     # Logging
     log_warnings                   = 2
