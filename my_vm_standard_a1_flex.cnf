@@ -27,13 +27,12 @@ socket = /run/mysqld/mysqld.sock
 [mysqld]
 max_connections = 150
 innodb_buffer_pool_size = 17G
-innodb_buffer_pool_instances = 64
-innodb_buffer_pool_chunk_size = 272M
 key_buffer_size = 8M
-max_heap_table_size = 64M
-tmp_table_size = 64M
+max_heap_table_size = 1024M
+tmp_table_size = 1024M
 innodb_log_file_size = 160M
 innodb_io_capacity = 50000
+
 
 query_cache_size = 0
 join_buffer_size = 2M
