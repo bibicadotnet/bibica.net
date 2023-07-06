@@ -1,0 +1,76 @@
+    #
+    [client]
+    port            = 3306
+    socket          = /var/run/mysqld/mysqld.sock
+    
+    [mysqld]
+    socket          = /var/run/mysqld/mysqld.sock
+    port            = 3306
+    user                           = mysql
+    # applies only when running as root
+    #memlock                        = 1
+    
+    table_open_cache               = 3072
+    table_definition_cache         = 4096
+    max_heap_table_size            = 64M
+    tmp_table_size                 = 64M
+    max_connections                = 505
+    max_user_connections           = 500
+    max_allowed_packet             = 16M
+    thread_cache_size              = 32
+    query_cache_size               = 64M
+    
+    # InnoDB
+    default_table_type             = InnoDB
+    
+    # 80% of ram that is dedicated for the database (this needs to be adjusted to your system)
+    innodb_buffer_pool_size        = 14G
+    # number of CPU cores dedicated to the MySQL InnoDB backend 
+    innodb_buffer_pool_instances = 16 
+    
+    innodb_data_file_path          = ibdata1:128M:autoextend
+    innodb_file_per_table          = 1
+    innodb_log_file_size           = 512M
+    innodb_log_files_in_group      = 2
+    
+    # MyISAM
+    myisam_recover                 = backup,force
+    
+    # Logging
+    log_warnings                   = 2
+    log_error                      = /var/log/mysql/error.log
+    
+    slow_query_log                 = 1
+    slow_query_log_file            = /var/log/mysql/mysql-slow.log
+    long_query_time                = 1
+    log_queries_not_using_indexes  = 1
+    min_examined_row_limit         = 20
+    
+    # Binary Log / Replication
+    server_id                      = 1
+    log-bin                        = mysql-bin
+    binlog_cache_size              = 1M 
+    sync_binlog                    = 8
+    binlog_format                  = row
+    expire_logs_days               = 7
+    max_binlog_size                = 128M 
+    relay-log                      = /var/log/mysql/slave-relay.log
+    relay-log-index                = /var/log/mysql/slave-relay-log.index 
+    
+    [mysqldump]
+    quick
+    single-transaction
+    max_allowed_packet             = 16M
+    
+    [mysql]
+    no_auto_rehash
+    
+    [myisamchk]
+    key_buffer                     = 512M
+    sort_buffer_size               = 512M
+    read_buffer                    = 8M
+    write_buffer                   = 8M
+    
+    [mysqld_safe]
+    open-files-limit               = 8192
+    log-error                      = /var/log/mysql/error.log
