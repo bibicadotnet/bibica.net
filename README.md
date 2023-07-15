@@ -1,4 +1,4 @@
-# Oracle 24GB RAM cho bibica.net, api.bibica.net
+# Oracle 24GB RAM cho bibica.net, api.bibica.net, warp-up-cache
 Cấu hình cụ thể bao gồm 3 VM tại Home Region US West (San Jose)
 <ul>
  	<li>bibica.net sẽ chạy trên VM.Standard.A1.Flex 4 core 24 GB RAM 100 GB HDD</li>
