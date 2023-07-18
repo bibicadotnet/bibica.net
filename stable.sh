@@ -46,6 +46,9 @@ sudo wget --no-check-certificate https://raw.githubusercontent.com/bibicadotnet/
 nginx -t
 sudo service nginx reload
 
+# Monitor and restart php, mysql, nginx
+sudo wget --no-check-certificate https://raw.githubusercontent.com/bibicadotnet/monitor-service-status/main/setup_monitor_service_restart.sh -O setup_monitor_service_restart.sh && sudo chmod +x setup_monitor_service_restart.sh && sudo ./setup_monitor_service_restart.sh
+
 sudo apt update && sudo apt upgrade -y
 sudo webinoly -verify
 sudo webinoly -info
