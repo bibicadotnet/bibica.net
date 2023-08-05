@@ -19,6 +19,7 @@ nohup /usr/local/bin/bypass_oracle.sh >> ./out 2>&1 <&- &
 # setup crontab cho wp_cron and simply-static
 mkdir -p /var/www/bibica.net/static-files-temp
 chmod 777 /var/www/bibica.net/static-files-temp
+chown -R www-data:www-data /var/www/bibica.net/
 crontab -l > simply-static
 echo "0 3 * * * /usr/local/bin/wp --path='/var/www/bibica.net/htdocs' simply-static run --allow-root" >> simply-static
 echo "*/1 * * * * curl https://bibica.net/wp-cron.php?doing_wp_cron > /dev/null 2>&1" >> simply-static
