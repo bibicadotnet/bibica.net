@@ -1,5 +1,5 @@
 #!/bin/bash
-# setup Webinoly php 8.2
+# setup Webinoly php 7.4
 sudo wget --no-check-certificate https://raw.githubusercontent.com/bibicadotnet/Oracle-VM-Standard-A1-Flex-Webinoly/main/setup.sh -O setup.sh && sudo chmod +x setup.sh && sudo ./setup.sh
 
 # setup wp-cli
@@ -15,11 +15,11 @@ sudo -v ; curl https://rclone.org/install.sh | sudo bash
 sudo wget --no-check-certificate https://raw.githubusercontent.com/bibicadotnet/NeverIdle-Oracle/master/VM.Standard.A1.Flex.4GB.RAM.sh -O /usr/local/bin/bypass_oracle.sh
 chmod +x /usr/local/bin/bypass_oracle.sh
 nohup /usr/local/bin/bypass_oracle.sh >> ./out 2>&1 <&- &
+chown -R www-data:www-data /var/www/bibica.net/
 
 # setup crontab cho wp_cron and simply-static
 mkdir -p /var/www/bibica.net/static-files-temp
 chmod 777 /var/www/bibica.net/static-files-temp
-chown -R www-data:www-data /var/www/bibica.net/
 crontab -l > simply-static
 echo "0 3 * * * /usr/local/bin/wp --path='/var/www/bibica.net/htdocs' simply-static run --allow-root" >> simply-static
 echo "*/1 * * * * curl https://bibica.net/wp-cron.php?doing_wp_cron > /dev/null 2>&1" >> simply-static
@@ -31,7 +31,7 @@ sudo site bibica.net -wp
 sudo httpauth bibica.net -wp-admin=off
 
 # setup proxy api.bibica.net
-sudo site api.bibica.net -proxy=[https://i0.wp.com/bibica.net/wp-content/uploads/] -dedicated-reverse-proxy=simple
+sudo site api.bibica.net -proxy=[https://i0.wp.com/cdn.bibica.net/wp-content/uploads/] -dedicated-reverse-proxy=simple
 
 # setup ssl
 mkdir -p /root/ssl
