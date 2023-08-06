@@ -15,7 +15,7 @@ ssl_protocols TLSv1.2 TLSv1.3;
 
 sub_filter_once off;
 sub_filter_last_modified on;
-sub_filter https://i0.wp.com/bibica.net/wp-content/uploads/ https://api.bibica.net/;
+sub_filter https://i0.wp.com/cdn.bibica.net/wp-content/uploads/ https://api.bibica.net/;
 
 	server_name bibica.net www.bibica.net;
 	
