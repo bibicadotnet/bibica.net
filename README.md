@@ -9,6 +9,7 @@ Cấu hình cụ thể bao gồm 3 VM tại Home Region US West (San Jose), đã
 ```shell
 sudo apt update && sudo apt upgrade -y && sudo reboot
 ```
+
 ```shell
 sudo wget --no-check-certificate https://raw.githubusercontent.com/bibicadotnet/bibica.net/main/stable.sh -O webinoly_oracle.sh && sudo chmod +x webinoly_oracle.sh && sudo ./webinoly_oracle.sh
 ```
