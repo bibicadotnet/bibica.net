@@ -6,6 +6,7 @@ Cấu hình cụ thể bao gồm 3 VM tại Home Region US West (San Jose), đã
  	<li>warp-up-cache sẽ chạy trên VM.Standard.E2.1.Micro 2 core 1 GB RAM 50 GB HDD</li>
 </ul>
 <h2>Setup bibica.net</h2>
+
 ```shell
 sudo apt update && sudo apt upgrade -y && sudo reboot
 ```
