@@ -2,6 +2,10 @@
 # setup Webinoly php 7.4
 sudo wget --no-check-certificate https://raw.githubusercontent.com/bibicadotnet/Oracle-VM-Standard-A1-Flex-Webinoly/main/setup.sh -O setup.sh && sudo chmod +x setup.sh && sudo ./setup.sh
 
+#su dung cau hinh database mới
+sudo wget --no-check-certificate https://raw.githubusercontent.com/bibicadotnet/Oracle-VM-Standard-A1-Flex-Webinoly/main/my_new.cnf -O /etc/mysql/my.cnf
+sudo service mysql restart
+
 # setup wp-cli
 curl -O https://raw.githubusercontent.com/wp-cli/builds/gh-pages/phar/wp-cli.phar
 php wp-cli.phar --info
