@@ -35,7 +35,7 @@ sudo site bibica.net -wp
 sudo httpauth bibica.net -wp-admin=off
 
 # setup proxy api.bibica.net
-sudo site api.bibica.net -proxy=[https://i0.wp.com/cdn.bibica.net/wp-content/uploads/] -dedicated-reverse-proxy=simple
+sudo site api.bibica.net -proxy=[https://res.cloudinary.com/xinclub/images/] -dedicated-reverse-proxy=simple
 
 # setup ssl
 mkdir -p /root/ssl
