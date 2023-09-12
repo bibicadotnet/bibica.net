@@ -15,7 +15,10 @@ ssl_protocols TLSv1.2 TLSv1.3;
 
 sub_filter_once off;
 sub_filter_last_modified on;
-sub_filter https://i0.wp.com/cdn.bibica.net/wp-content/uploads/ https://api.bibica.net/;
+sub_filter 'src="https://res.cloudinary.com/xinclub/images/' 'src="https://api.bibica.net/';
+sub_filter '<a href="https://res.cloudinary.com/xinclub/images/' '<a href="https://api.bibica.net/';
+sub_filter 'srcset="https://res.cloudinary.com/xinclub/images/' 'srcset="https://api.bibica.net/';
+sub_filter '?_i=AA' '';
 
 	server_name bibica.net www.bibica.net;
 	
