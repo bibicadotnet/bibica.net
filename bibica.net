@@ -13,6 +13,27 @@ ssl_certificate /root/ssl/bibica.net.pem;
 ssl_certificate_key /root/ssl/bibica.net.key;
 ssl_protocols TLSv1.2 TLSv1.3;
 
+# remove GET parameters:
+if ($args ~* (.*)fbclid=[^&]*(.*)) {
+set $args $1$2;
+set $removearg "removearg";
+}
+# cleanup any repeated & introduced:
+if ($args ~ (.*)&&+(.*)) {
+set $args $1&$2;
+}
+# cleanup leading &
+if ($args ~ ^&(.*)) {
+set $args $1;
+}
+# cleanup ending &
+if ($args ~ (.*)&$) {
+set $args $1;
+}
+if ( $removearg = "removearg" ) {
+rewrite ^(.*)$ $uri permanent;
+}
+
 sub_filter_once off;
 sub_filter_last_modified on;
 sub_filter https://i0.wp.com/bibica.net/wp-content/uploads/ https://api.bibica.net/;
