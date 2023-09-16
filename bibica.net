@@ -36,7 +36,7 @@ rewrite ^(.*)$ $uri permanent;
 
 sub_filter_once off;
 sub_filter_last_modified on;
-sub_filter 'https://i0.wp.com/bibica.net/' 'https://api.bibica.net/';
+sub_filter 'https://i0.wp.com/bibica.net/wp-content/uploads/' 'https://api.bibica.net/';
 
 	server_name bibica.net www.bibica.net;
 	
