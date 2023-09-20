@@ -14,7 +14,8 @@ ssl_certificate_key /root/ssl/bibica.net.key;
 ssl_protocols TLSv1.2 TLSv1.3;
 
 	server_name api.bibica.net;
-	
+	add_header api.bibica.net $upstream_cache_status;
+
 	access_log off;
 	error_log /var/log/nginx/api.bibica.net.error.log;
 	
