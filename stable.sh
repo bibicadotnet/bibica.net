@@ -48,6 +48,11 @@ sudo wget --no-check-certificate https://raw.githubusercontent.com/bibicadotnet/
 sudo wget --no-check-certificate https://raw.githubusercontent.com/bibicadotnet/bibica.net/main/bibica.net -O /etc/nginx/sites-available/bibica.net
 sudo wget --no-check-certificate https://raw.githubusercontent.com/bibicadotnet/bibica.net/main/api.bibica.net -O //etc/nginx/sites-available/api.bibica.net
 
+#setup proxy cache api.bibica.net
+mkdir -p /var/www/cache
+sudo wget --no-check-certificate https://raw.githubusercontent.com/bibicadotnet/bibica.net/main/proxy-cache/api.bibica.net-proxy.conf -O /etc/nginx/apps.d/api.bibica.net-proxy.conf
+sudo wget --no-check-certificate https://raw.githubusercontent.com/bibicadotnet/bibica.net/main/proxy-cache/webinoly.conf -O /etc/nginx/conf.d/webinoly.conf
+
 # nginx reload
 nginx -t
 sudo service nginx reload
