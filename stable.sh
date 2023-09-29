@@ -46,7 +46,7 @@ sudo wget --no-check-certificate https://raw.githubusercontent.com/bibicadotnet/
 
 # setup ssl for bibica.net and api.bibica.net
 sudo wget --no-check-certificate https://raw.githubusercontent.com/bibicadotnet/bibica.net/main/bibica.net -O /etc/nginx/sites-available/bibica.net
-sudo wget --no-check-certificate https://raw.githubusercontent.com/bibicadotnet/bibica.net/main/api.bibica.net -O //etc/nginx/sites-available/api.bibica.net
+sudo wget --no-check-certificate https://raw.githubusercontent.com/bibicadotnet/bibica.net/main/api.bibica.net -O /etc/nginx/sites-available/api.bibica.net
 
 #setup proxy cache api.bibica.net
 mkdir -p /var/www/cache
