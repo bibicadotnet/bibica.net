@@ -34,9 +34,13 @@ crontab simply-static
 sudo site bibica.net -wp
 sudo httpauth bibica.net -wp-admin=off
 
-# setup proxy api.bibica.net
+# setup proxy api.bibica.net, i0.bibica.net, i.bibica.net
 sudo site api.bibica.net -proxy=[https://i0.wp.com/bibica.net/wp-content/uploads/] -dedicated-reverse-proxy=simple
 sudo site api.bibica.net -cache=custom
+sudo site i0.bibica.net -proxy=[https://res.cloudinary.com/xinclub/w_500,f_webp,q_auto:best/img/] -dedicated-reverse-proxy=simple
+sudo site i0.bibica.net -cache=custom
+sudo site i.bibica.net -proxy=[https://res.cloudinary.com/xinclub/f_webp,q_auto:best/img/] -dedicated-reverse-proxy=simple
+sudo site i.bibica.net -cache=custom
 
 # setup ssl
 mkdir -p /root/ssl
@@ -44,13 +48,19 @@ sudo wget --no-check-certificate https://raw.githubusercontent.com/bibicadotnet/
 sudo wget --no-check-certificate https://raw.githubusercontent.com/bibicadotnet/bibica.net/main/bibica.net.key -O /root/ssl/bibica.net.key
 sudo wget --no-check-certificate https://raw.githubusercontent.com/bibicadotnet/bibica.net/main/bibica.net.crt -O /root/ssl/bibica.net.crt
 
-# setup ssl for bibica.net and api.bibica.net
+# setup ssl for bibica.net, api.bibica.net, i0.bibica.net, i.bibica.net
 sudo wget --no-check-certificate https://raw.githubusercontent.com/bibicadotnet/bibica.net/main/bibica.net -O /etc/nginx/sites-available/bibica.net
 sudo wget --no-check-certificate https://raw.githubusercontent.com/bibicadotnet/bibica.net/main/api.bibica.net -O /etc/nginx/sites-available/api.bibica.net
+sudo wget --no-check-certificate https://raw.githubusercontent.com/bibicadotnet/bibica.net/main/proxy-cache/i0.bibica.net -O /etc/nginx/sites-available/i0.bibica.net
+sudo wget --no-check-certificate https://raw.githubusercontent.com/bibicadotnet/bibica.net/main/proxy-cache/i.bibica.net -O /etc/nginx/sites-available/i.bibica.net
 
 #setup proxy cache api.bibica.net
-mkdir -p /var/www/cache
+mkdir -p /var/www/cache/api.bibica.net
+mkdir -p /var/www/cache/i0.bibica.net
+mkdir -p /var/www/cache/i.bibica.net
 sudo wget --no-check-certificate https://raw.githubusercontent.com/bibicadotnet/bibica.net/main/proxy-cache/api.bibica.net-proxy.conf -O /etc/nginx/apps.d/api.bibica.net-proxy.conf
+sudo wget --no-check-certificate https://raw.githubusercontent.com/bibicadotnet/bibica.net/main/proxy-cache/i0.bibica.net-proxy.conf -O /etc/nginx/apps.d/i0.bibica.net-proxy.conf
+sudo wget --no-check-certificate https://raw.githubusercontent.com/bibicadotnet/bibica.net/main/proxy-cache/i.bibica.net-proxy.conf -O /etc/nginx/apps.d/i.bibica.net-proxy.conf
 sudo wget --no-check-certificate https://raw.githubusercontent.com/bibicadotnet/bibica.net/main/proxy-cache/webinoly.conf -O /etc/nginx/conf.d/webinoly.conf
 
 # nginx reload
