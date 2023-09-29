@@ -55,9 +55,9 @@ sudo wget --no-check-certificate https://raw.githubusercontent.com/bibicadotnet/
 sudo wget --no-check-certificate https://raw.githubusercontent.com/bibicadotnet/bibica.net/main/proxy-cache/i.bibica.net -O /etc/nginx/sites-available/i.bibica.net
 
 #setup proxy cache api.bibica.net, i0.bibica.net, i.bibica.net
-mkdir -p /var/www/cache/api.bibica.net
-mkdir -p /var/www/cache/i0.bibica.net
-mkdir -p /var/www/cache/i.bibica.net
+mkdir -p /var/www/api_bibica_net
+mkdir -p /var/www/i0_bibica_net
+mkdir -p /var/www/i_bibica_net
 sudo wget --no-check-certificate https://raw.githubusercontent.com/bibicadotnet/bibica.net/main/proxy-cache/api.bibica.net-proxy.conf -O /etc/nginx/apps.d/api.bibica.net-proxy.conf
 sudo wget --no-check-certificate https://raw.githubusercontent.com/bibicadotnet/bibica.net/main/proxy-cache/i0.bibica.net-proxy.conf -O /etc/nginx/apps.d/i0.bibica.net-proxy.conf
 sudo wget --no-check-certificate https://raw.githubusercontent.com/bibicadotnet/bibica.net/main/proxy-cache/i.bibica.net-proxy.conf -O /etc/nginx/apps.d/i.bibica.net-proxy.conf
