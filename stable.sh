@@ -56,6 +56,9 @@ sudo site bibica.net -wp
 sudo httpauth bibica.net -wp-admin=off
 
 # setup proxy api.bibica.net, i0.bibica.net, i.bibica.net
+sudo webinoly -cache-valid=[100y,100y,100y]
+sudo service nginx reload
+
 sudo site api.bibica.net -proxy=[https://i0.wp.com/bibica.net/wp-content/uploads/] -dedicated-reverse-proxy=simple
 sudo site api.bibica.net -cache=custom
 sudo site i0.bibica.net -proxy=[https://res.cloudinary.com/xinclub/w_500,f_webp,q_auto:best/img/] -dedicated-reverse-proxy=simple
@@ -76,13 +79,15 @@ sudo wget --no-check-certificate https://raw.githubusercontent.com/bibicadotnet/
 sudo wget --no-check-certificate https://raw.githubusercontent.com/bibicadotnet/bibica.net/main/proxy-cache/i.bibica.net -O /etc/nginx/sites-available/i.bibica.net
 
 #setup proxy cache api.bibica.net, i0.bibica.net, i.bibica.net
-#mkdir -p /var/www/api_bibica_net
-#mkdir -p /var/www/i0_bibica_net
-#mkdir -p /var/www/i_bibica_net
-#sudo wget --no-check-certificate https://raw.githubusercontent.com/bibicadotnet/bibica.net/main/proxy-cache/api.bibica.net-proxy.conf -O /etc/nginx/apps.d/api.bibica.net-proxy.conf
-#sudo wget --no-check-certificate https://raw.githubusercontent.com/bibicadotnet/bibica.net/main/proxy-cache/i0.bibica.net-proxy.conf -O /etc/nginx/apps.d/i0.bibica.net-proxy.conf
-#sudo wget --no-check-certificate https://raw.githubusercontent.com/bibicadotnet/bibica.net/main/proxy-cache/i.bibica.net-proxy.conf -O /etc/nginx/apps.d/i.bibica.net-proxy.conf
-#sudo wget --no-check-certificate https://raw.githubusercontent.com/bibicadotnet/bibica.net/main/proxy-cache/webinoly.conf -O /etc/nginx/conf.d/webinoly.conf
+mkdir -p /var/www/cache/api_bibica_net
+mkdir -p /var/www//cache/i0_bibica_net
+mkdir -p /var/www//cache/i_bibica_net
+chown -R www-data:www-data /var/www//cache/
+
+sudo wget --no-check-certificate https://raw.githubusercontent.com/bibicadotnet/bibica.net/main/proxy-cache/api.bibica.net-proxy.conf -O /etc/nginx/apps.d/api.bibica.net-proxy.conf
+sudo wget --no-check-certificate https://raw.githubusercontent.com/bibicadotnet/bibica.net/main/proxy-cache/i0.bibica.net-proxy.conf -O /etc/nginx/apps.d/i0.bibica.net-proxy.conf
+sudo wget --no-check-certificate https://raw.githubusercontent.com/bibicadotnet/bibica.net/main/proxy-cache/i.bibica.net-proxy.conf -O /etc/nginx/apps.d/i.bibica.net-proxy.conf
+sudo wget --no-check-certificate https://raw.githubusercontent.com/bibicadotnet/bibica.net/main/proxy-cache/webinoly.conf -O /etc/nginx/conf.d/webinoly.conf
 
 # nginx reload
 nginx -t
