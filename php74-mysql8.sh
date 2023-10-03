@@ -12,21 +12,15 @@ sudo apt install screen -y
 
 # setup Webinoly php 7.4
 wget -qO weby qrok.es/wy && sudo bash weby -clean -ver=1.17.5
-
-
-
-
-
-sudo wget --no-check-certificate https://raw.githubusercontent.com/bibicadotnet/webinoly/master/weby -O weby && sudo chmod +x weby && sudo ./weby -clean
 sudo rm /opt/webinoly/webinoly.conf
-sudo wget --no-check-certificate https://raw.githubusercontent.com/bibicadotnet/Oracle-VM-Standard-A1-Flex-Webinoly/main/vm_standard_a1_flex.conf -O /opt/webinoly/webinoly.conf
+sudo wget --no-check-certificate https://raw.githubusercontent.com/bibicadotnet/bibica.net/main/php74-mysql8-webinoly.conf -O /opt/webinoly/webinoly.conf
 sudo stack -lemp -build=light
 
 # Optimization PHP, MariaDB
-sudo wget --no-check-certificate https://raw.githubusercontent.com/bibicadotnet/Oracle-VM-Standard-A1-Flex-Webinoly/main/php.ini -O /etc/php/7.4/fpm/php.ini
-sudo service php7.4-fpm restart
-sudo wget --no-check-certificate https://raw.githubusercontent.com/bibicadotnet/bibica.net/main/my.cnf -O /etc/mysql/my.cnf
-sudo service mysql restart
+#sudo wget --no-check-certificate https://raw.githubusercontent.com/bibicadotnet/Oracle-VM-Standard-A1-Flex-Webinoly/main/php.ini -O /etc/php/7.4/fpm/php.ini
+#sudo service php7.4-fpm restart
+#sudo wget --no-check-certificate https://raw.githubusercontent.com/bibicadotnet/bibica.net/main/my.cnf -O /etc/mysql/my.cnf
+#sudo service mysql restart
 
 # off filewall
 sudo apt remove iptables-persistent -y
